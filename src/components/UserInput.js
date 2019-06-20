@@ -19,7 +19,9 @@ class UserInput extends Component {
     this.props.dispatch({type: 'ADD_USER', user: this.state})
   }
 
+
   render() {
+    // console.log(this.state)
     return(
       <form onSubmit={this.handleOnSubmit}>
         <p>
@@ -44,4 +46,9 @@ class UserInput extends Component {
   }
 }
 
-export default connect()(UserInput);
+function mapStateToProps(state) {
+  return {user: this.state}
+}
+
+
+export default connect(mapStateToProps)(UserInput);
